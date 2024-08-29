@@ -1,0 +1,15 @@
+construa uma funcao que receberá por parametro uma lista e devera retornar essa lista ordenada
+
+tipos de variavel
+var - variable(sofre mudançãs)
+const - constante (na teoria) 
+let - variavel literaria uso exclusivo de curta duração (geralmente usada dentro de funcões)
+
+tipos STRING, NUMBER, 
+OBJECT - Caracterizado por {}
+ARRAY - Caracterizado por []
+BOOLEAN - True ou False
+DATE - 	Data (Envolve variaveis de região) Date 
+
+'' - permite dentro da string uma interpolação ex: 'teste ${00}'
+"" - transforma em uma string independente do que esta dentro
