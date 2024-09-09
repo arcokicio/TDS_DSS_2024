@@ -1,0 +1,12 @@
+construa uma função e conte quantos caracteres tem o nome
+
+construa um lastro de repetição em que insere um hifen entre cada letra do nome
+
+depois cria uma função para cada transformação uma das funções altera as caracteres em letras maisculas
+outra função tudo minuscula outra função so a primeira letra maiuscula e outra função para colocar a primeira letra do nome maiuscula quando tiver espaço a letra que começa ser maiscula
+
+
+
+---- 
+
+funcao constroi pinheirinho desenhado no console - calcular linhas que vai ter deixar
