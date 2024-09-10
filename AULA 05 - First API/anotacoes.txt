@@ -1,0 +1,31 @@
+API Aplication Process Interface (end point)
+web socket - tecnologia que conecta um servidor central aos dispositivos (este servidor se chama API)
+
+REST (garçom)
+faz solicitação e pode ou nao receber um retorno
+
+PRIMEIRA COMANDO API
+NPM =  GERENCIADOR DE PACOTES. 
+npm init (cria packet jason)
+
+{
+  "name": "first_api",
+  "version": "1.0.0",
+  "description": "This is my fisrt API in node developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thiago Martins de Araujo",
+  "license": "ISC"
+}
+
+npm init -y (cria os parametros acima automaticamente)
+
+---------------
+
+npm install express
+express - gerencia o REST
+
+CTRL + C = PARA O SERVIÇO
+node index.js = INICIA O INDEX 
