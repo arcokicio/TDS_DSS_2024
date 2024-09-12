@@ -1,0 +1,17 @@
+{
+  "name": "first_api",
+  "version": "1.0.0",
+  "description": "This is my fisrt API in node developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon node index.js"
+  },
+  "author": "Thiago Martins de Araujo",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  }
+}

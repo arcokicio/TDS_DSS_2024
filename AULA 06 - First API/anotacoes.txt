@@ -1,0 +1,19 @@
+parse =  recebe informacoes do cliente
+
+------------
+
+construa uma API
+
+NOVA PASTA 
+API
+
+------------
+
+npm 
+pacote nodemon
+
+nopm
+
+----------
+
+parse =  transorma json  em object 
