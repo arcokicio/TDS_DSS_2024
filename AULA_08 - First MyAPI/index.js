@@ -47,10 +47,32 @@ const novoCadastro = [
     }
 ]
 
+
+
+
+
 //padrão request response
 app.post("/novoCadastro", (request, response) => {
 
     let nomeProcurado = request.body.nome;
+
+        //-------Expressões Regulares--------
+    // / ... /: Delimita a expressão regular.
+    // \d: Este é um metacaractere que representa qualquer dígito de 0 a 9.
+    // .test(...): O método test() é usado para verificar se a expressão regular 
+    // corresponde a alguma parte da string que está sendo testada. Retorna true se 
+    // encontrar uma correspondência e false caso contrário.
+    // Verifica se o nome contém números
+    // [ e ]: Esses colchetes delimitam uma classe de caracteres
+    // ^ (Caret):Quando colocado no início da classe de caracteres, o símbolo ^ 
+    // indica que estamos buscando caracteres que não estão incluídos na lista que segue. Ou seja, ele nega a correspondência.
+    // a-z - quando nao conter letras minuscula de a-z
+    // A-Z - quando nao conter letras maiuscula de A-Z
+    // \s atalho para whitespace - quando nao conter espaço 
+
+    if (/[^a-zA-Z\s]/.test(nomeProcurado)) {
+        return response.status(400).send("O nome contém caracteres inválidos");
+    }
 
     for (var i = 0; i < novoCadastro.length; i++) {
         if (novoCadastro[i].nome === nomeProcurado) {
