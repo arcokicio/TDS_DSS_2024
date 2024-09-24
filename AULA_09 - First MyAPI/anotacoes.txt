@@ -1,0 +1,7 @@
+insomnia
+
+baseenvironmte
+criar base URL
+
+PACOTE VALIDADOR
+JAVASCRIPT
