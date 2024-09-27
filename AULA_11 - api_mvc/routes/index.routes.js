@@ -13,6 +13,8 @@ const routes = express.Router();
 routes.use("/clientes", clienteRouter)
 routes.use("/nota", notaRouter)
 
+
+
 // exporta modelo
 module.exports = routes;
 

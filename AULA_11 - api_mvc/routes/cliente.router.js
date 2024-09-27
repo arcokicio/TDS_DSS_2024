@@ -4,8 +4,13 @@ const express = require('express');
 // instancia router para uma constante
 const routes = express.Router();
 
-const clientes = [];
-const novoCadastro = [];
+var novoCadastro = [{
+    nome: "Thiago1",
+        idade: "21",
+        email: "thiago1@gmail.com",
+        telefone: "4196584-6581",
+        id: "323242"
+}];
 
 //consulta
 routes.get("/consulta", (request, response) => {
@@ -51,9 +56,10 @@ routes.post("/novoCadastro", (request, response) => {
 
 
 // Endpoint para consultar um cadastro específico pelo nome
-routes.get("/consulta/:nome", (request, response) => {
-    return response.status(400).send(request.params.nome); // Retorna o nome da consulta
-});
+//routes.get("/consulta/:nome", (request, response) => {
+//    return response.status(400).send(request.params.nome); // Retorna o nome da consulta
+//    
+//});
 
 // Atualiza um cadastro existente pelo ID
 routes.put("/atualiza/:id", (request, response) => {
@@ -68,7 +74,7 @@ routes.put("/atualiza/:id", (request, response) => {
 });
 
 // Consulta um cadastro pelo nome usando filter
-routes.get("/consulta/consultanome/:nome", (request, response) => {
+routes.get("/consultanome/:nome", (request, response) => {
     const nomeconsulta = novoCadastro.filter((algumacoisa) => algumacoisa.nome == request.params.nome);
     return response.send(nomeconsulta); // Retorna o cadastro correspondente
 });
@@ -83,4 +89,4 @@ routes.delete("/delete/:nome", (request, response) => {
 });
 
 // da direito de importacao do metodo para outros arquivos
-module.exports = routes;
+module.exports = routes;    
