@@ -12,8 +12,7 @@ const consultaController = require('../controller/cliente.controller.js')
 routes.get("/consulta", consultaController.consulta);
 
 // Padrão request-response para criar um novo cadastro
-routes.post("/novoCadastro", consultaController.novoCadastro1);
-
+routes.post("/novoCadastro", consultaController.cadastro);
 
 // Endpoint para consultar um cadastro específico pelo nome
 //routes.get("/consulta/:nome", (request, response) => {
