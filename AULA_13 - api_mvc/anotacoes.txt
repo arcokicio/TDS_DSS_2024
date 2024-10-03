@@ -1,0 +1,19 @@
+passo a passo API
+
+criar pastar e arquivos com nomes corretos
+
+no arquivo index.router criar as rotas
+
+no arquivo index criar os requires e os use
+
+criar rotas (rest full)
+
+usar arrowfunction sem parâmetros para evitar erros
+
+----
+
+próxima aula assinc await
+
+ctrl + d - para alterar mais de uma linha igual
+
+

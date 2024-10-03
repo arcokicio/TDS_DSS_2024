@@ -9,7 +9,7 @@
 
 const express = require('express'); // importa express 
 const bodyParser = require('body-parser'); // importa bodyparser ou seja fazer a sereliziação
-const indexRoutes = require('./routes/index.routes') // clienteRouter
+const indexRoutes = require('./routes/index.routes') // escolaRouter
 
 const app = express(); // instancia express
 
