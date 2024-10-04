@@ -5,16 +5,22 @@ const express = require('express');
 const routes = express.Router();
 
 // requerendo o arquivo controller
-const escolaController = require('../controller/escola.controller.js');
+const alunoController = require('../controller/aluno.controller.js');
+
+// atualiza cadastro do aluno
+routes.post("/", alunoController.atualizaAluno)
+
+// consulta cadastro através do ID do aluno
+routes.get("/", alunoController.consultaidAluno)
 
 // cadastra aluno
-routes.post("/cadastraAluno", escolaController.cadastraAluno);
+routes.post("/", alunoController.cadastraAluno);
 
 // Deleta um cadastro pelo nome
-routes.delete("/deletealuno/:nome", escolaController.deletar);
+routes.delete("/:id", alunoController.deletar);
 
 // Endpoint para consultar um cadastro específico pelo nome
-routes.get("/consulta/:nome", escolaController.consultaNome);
+routes.get("/:nome", alunoController.consultaNome);
 
 // da direito de importação do método para outros arquivos
 module.exports = routes;
