@@ -42,6 +42,16 @@ knex.js
 npm install mysql
 npm install knex
 
+FERRAMENTA DE ACESSO AO BANCO DE DADOS
+knex.js 
+
+///// Try Catch base
+try {
+	const data = await conn.raw("SELECT * FROM cliente");
+	res.send(data[0]);
+} catch (error){
+	res.send("Erro ao consultar");
+}
 
 
 */
