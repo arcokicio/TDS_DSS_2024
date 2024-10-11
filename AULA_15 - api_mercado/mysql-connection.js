@@ -1,0 +1,16 @@
+const knex = require("knex");
+
+module.exports = knex({
+    client: "mysql2",
+    connection:{
+        host:"localhost",
+        port:3306,
+        user:"root",
+        password:"admin",
+        database: "mercado"
+    }
+});
+
+/* INSERT INTO mercado.cliente(nome, telefone)
+VALUES ("Guilherme Pires", "4988164244");
+*/
