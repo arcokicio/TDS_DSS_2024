@@ -1,16 +1,10 @@
-// importa biblioteca express
-const express = require('express');
+const routes = require("express").Router();
+const clienteRouter = require("./cliente.router");
+const produtoRouter = require("./produto.router");
+const pedidoRouter = require("./pedido.router");
 
-// instancia router para uma constante
-const routes = express.Router();
-// exporta modelo
+routes.use("/cliente", clienteRouter);
+routes.use("/produto", produtoRouter);
+routes.use("/pedido", pedidoRouter);
+
 module.exports = routes;
-
-//requires
-const produtoRouter = require('./produto.router')
-const clienteRouter = require('./cliente.router')
-const pedidoRouter = require('./pedido.router')
-
-routes.use("/produto",produtoRouter)
-routes.use("/cliente",clienteRouter)
-routes.use("/pedido",pedidoRouter)

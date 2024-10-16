@@ -1,14 +1,9 @@
-// importando biblioteca express e instanciando router
 const routes = require("express").Router();
 
-//importando cliente controller
-const produtoController = require("../controller/produto.controller");
-
 //CRUD
-routes.post("/", produtoController.cadastrar);
-routes.get("/", produtoController.consultar);
-routes.put("/:id([0-9])", produtoController.atualizar);
-routes.delete("/", produtoController.deletar);
+routes.post("/", () => { });
+routes.get("/", () => { });
+routes.put("/:id([0-9]+)", () => { });
+routes.delete("/:id([0-9]+)", ()=>{});
 
-// exporta modelo
 module.exports = routes;

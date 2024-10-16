@@ -1,35 +1,21 @@
-/* npm install (baixa todas as dependências se você já tem um arquivo configurado)
- npm init -y (inicia projeto e cria todas as propriedades)
- npm i express (instala pacotes http)
- npm install body-parser (serialização, conversão de objeto para JSON)
- npm i -D nodeman (cria dependências de desenvolvimento que não serão executadas quando buildar)
- npm start (inicia o servidor)
- json nome e propriedade em aspas
- ../ para usar a a pasta
-*/
+const express = require("express");
+const bodyParser = require("body-parser");
+const indexRoutes = require("./routes/index.routes");
 
-//CONFIGS BÁSICAS
-const express = require('express'); // importa express 
-const app = express(); // instancia express
-const bodyParser = require('body-parser'); // importa bodyparser ou seja fazer a sereliziação
-const conn = require('./mysql-connection') // importa o mysql connection
-app.use(bodyParser.json()); // usa JSON para parsing - aceitar corpo json
+const conn = require("./mysql-connection");
 
+const app = express();
 
-//ROTAS
-const indexRoutes = require('./routes/index.routes'); // Requerimento do index.routes na const indexRoutes
-const mysqlConnection = require('./mysql-connection');
+app.use(bodyParser.json());
+
+app.use(indexRoutes);
 
 conn.raw('SELECT 1').then(() => {
-    console.log('Sucesso');
-}).catch((erro)=>{
-    console.log('Erro ${erro}');
+    console.log(`Banco de dados conectado com sucesso!`);
+}).catch((erro) => {
+    console.log(`Erro ao conectar ao banco de dados ${erro}`);
 });
 
-app.use(indexRoutes)/* middleware constrói uma “cadeia” executada na ordem em que o app. use() é requisitado.
-O middleware vai gerenciar a solicitação e redirecionar para outro URL/path/etc. */
-
-// Função de escuta na porta 8080
 app.listen(8080, () => {
-    console.log("O servidor está rodando na porta 8080");
+    console.log(`O servidor está rodando na porta 8080! 🚀`);
 });
