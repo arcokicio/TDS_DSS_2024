@@ -1,0 +1,15 @@
+JW T TOKEN 
+
+BASE 64 - NAO É CRIPTOGRAFIA
+
+------------------------
+
+REACT JS  
+
+framework VITE = ajuda o processo de criação do projeto
+
+------------------------
+
+cmd
+
+cd local
