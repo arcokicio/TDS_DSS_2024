@@ -1,0 +1,54 @@
+-----------------------
+projeto digita ->   npm install --d 
+                    npm run dev
+
+
+proejto api  -> npm install
+                npm start
+ 
+-----------------------
+
+tudo começa na main que vem da root
+
+------------------------
+
+JW T TOKEN 
+
+BASE 64 - NAO É CRIPTOGRAFIA
+
+------------------------
+
+REACT JS  
+
+framework VITE = ajuda o processo de criação do projeto
+
+------------------------
+
+cmd
+
+cd local
+
+-----------------------
+
+INSTALAÇÃO 
+
+npm create vite@latest TheReal
+√ Package name: ... thereal
+√ Select a framework: » React
+√ Select a variant: » JavaScript
+npm install
+npm run dev
+
+-------------------------
+
+<> SEMPRE JUNTAR OBJETOS NOS ARQUIVOS .JSX</>
+
+USE STATE (responsavel por aguardar mutação)
+const [contador, setContador] = useState();
+
+BODY
+{contador}
+
+useState - atualiza em tempo real
+-------------------------
+
