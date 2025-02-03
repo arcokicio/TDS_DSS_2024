@@ -14,7 +14,7 @@ module.exports = {
         }
 
         if (!nacionalidade) {
-            return res.status(500).send({ msg: "O campo naciolidade é obrigatorio!" });
+            return res.status(500).send({ msg: "O campo nacionalidade é obrigatorio!" });
         }
 
         try {
@@ -23,72 +23,62 @@ module.exports = {
             const nacionalidade = await conn("nacionalidade").insert({ nacionalidade });
 
             return res.status(200).send({
-                msg : "Produto cadastrado com sucesso!"
+                msg: "autor cadastrado com sucesso!"
             });
 
         } catch (error) {
             console.log(error);
-            return res.status(500).send({ msg: "Erro ao cadastrar o produto!" });
+            return res.status(500).send({ msg: "Erro ao cadastrar o autor!" });
         }
 
 
     },
+
     consultar: async (req, res) => {
         try {
-            const data = await conn.select().from("autores");
+            const data = await conn.select().from("autor");
             return res.status(200).send(data);
         } catch (error) {
             console.log(error);
-            return res.status(500).send({ msg: "Erro ao consultar autores!" });
+            return res.status(500).send({ msg: "Erro ao consultar autor!" });
         }
     },
+
     atualizar: async (req, res) => {
-        const { id, nome, nacionalidade } = req.body;
-        const { id, nome, nacionalidade } = req.params;
+        const { nome, nacionalidade } = req.body;
+        const { id } = req.params;
 
         try {
-            const id = await conn.select().from("produto").where({ id });
-            
-            if (produto.length <= 0) {
-                return res.status(404).send({ msg: `O código ${id} não existe!` })
+            const autor = await conn.select().from("autor").where({ id });
+
+            if (autor.length <= 0) {
+                return res.status(500).send({ msg: `O código ${id} não existe!` })
             }
 
-            await conn("produto").update({
+            await conn("autor").update({
                 nome,
-                preco,
-                status
+                nacionalidade,
             }).where({ id });
 
-            // UPDATE PRODUTO SET (NOME, PRECO, STATUS) VALUES("PASTEL", 1, true);
-
-            return res.status(200).send({ msg : "Produto atualizado com sucesso!"});
+            return res.status(200).send({ msg: "autor atualizado com sucesso!" });
 
         } catch (error) {
             console.log(error);
-            return res.status(500).send({ msg: "Erro ao atualizar o produto" });
+            return res.status(500).send({ msg: "Erro ao atualizar o autor" });
         }
 
     },
+
+
     deletar: async (req, res) => {
         const { id } = req.params;
 
         try {
-            await conn("produto").where({ id }).del();
-            return res.status(200).send({ msg: "Produto excluido com sucesso!" });
+            await conn("autor").where({ id }).del();
+            return res.status(200).send({ msg: "autor excluido com sucesso!" });
         } catch (error) {
             console.log(error);
-            res.status(500).send({ msg: "Erro ao deletar o pedido!" });
+            res.status(500).send({ msg: "Erro ao deletar o autor!" });
         }
     },
-    buscaPorId: async (req, res) => {
-        const { id } = req.params;
-
-        try {
-            const produto = await conn.select().from("produto").where({ id });
-            return res.status(200).send(produto);
-        } catch (error) {
-            console.log(error);
-            return res.status(500).send({ msg: "erro ao consultar produto!" });
-        }
-    }
 }
